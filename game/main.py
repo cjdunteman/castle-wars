@@ -1,9 +1,9 @@
 import os
 
-from game import Player, AI
+from player import Player, AI
 
 
-def gameLoop():
+def game_loop():
     player = Player()
     ai = AI()
 
@@ -11,10 +11,21 @@ def gameLoop():
     playing = True
     while playing:
 
-        playerTurn = True
-        while playerTurn:
-            print("You:\nCastle: " + str(player.castle) + " Food: " + str(player.food) + " Stone: " + str(player.stone) + " Villagers: " + str(player.villagers) + " Warriors: " + str(player.warriors) + "\n")
-            print("Computer:\nCastle: " + str(ai.castle) + " Food: " + str(ai.food) + " Stone: " + str(ai.stone) + " Villagers: " + str(ai.villagers) + " Warriors: " + str(ai.warriors) + "\n")
+        player_turn = True
+        while player_turn:
+            print(f"""You:
+                Castle: {player.castle}
+                Food: {player.food}
+                Stone: {player.stone}
+                Villagers: {player.villagers}
+                Warriors: {player.warriors}""")
+
+            print(f"""Computer:
+        Castle: {ai.castle}
+        Food: {ai.food}
+        Stone: {ai.stone}
+        Villagers: {ai.villagers}
+        Warriors: {ai.warriors}""")
 
             action = 0
             action = int(input("1) Build\n2) Gather\n3) Recruit\n4) Attack\n"))
@@ -29,7 +40,7 @@ def gameLoop():
             else:
                 playerTurn = True
 
-        ai.makeMove(player)   
+        ai.make_move(player)   
 
         if ai.castle <= 0:
             playing = False
@@ -41,4 +52,4 @@ def gameLoop():
             os.system('clear')
 
 if __name__ == '__main__':
-    gameLoop()
+    game_loop()

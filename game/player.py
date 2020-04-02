@@ -1,12 +1,12 @@
 import os, random
 
 class Player():
-    def __init__(self):
-        self.castle = 1
-        self.villagers = 1
-        self.warriors = 0
-        self.food = 0
-        self.stone = 0
+    def __init__(self, castle=1, villagers=1, warriors=0, food=0, stone=0):
+        self.castle = castle
+        self.villagers = villagers
+        self.warriors = warriors
+        self.food = food
+        self.stone = stone
 
     def build(self):
         if self.stone >= 1:
@@ -31,15 +31,15 @@ class Player():
             return False
         else:
             os.system('clear')
-            if self.__class__.__name__ == "Player":
+            if isinstance(self, Player):
                 print("You don't have enough food!\n")
             return True
 
     def attack(self, opponent):
         if self.warriors >= 1:
-            if self.__class__.__name__ == "Player":
+            if isinstance(self, Player):
                 opponent.castle -= self.warriors
-            elif self.__class__.__name__ == "AI":
+            elif isinstance(self, AI):
                 opponent.castle -= self.warriors
 
 
@@ -47,7 +47,7 @@ class AI(Player):
     def __init__(self):
         super().__init__()
         
-    def makeMove(self, player):
+    def make_move(self, player):
         action = 0
         # Win if player castle weak
         if player.castle <= self.warriors:
