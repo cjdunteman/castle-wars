@@ -1,4 +1,4 @@
-![](https://github.com/cjdunteman/castle-wars/.github/workflows/Python%20Package/badge.svg)
+![](https://github.com/cjdunteman/castle-wars/workflows/Python%20Package/badge.svg)
 
 # Castle Wars
 
