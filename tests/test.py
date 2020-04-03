@@ -1,6 +1,6 @@
 import unittest
 
-from game.main import Player, AI
+from game.player import Player, AI
 
 
 class TestPlayer(unittest.TestCase):

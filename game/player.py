@@ -15,7 +15,7 @@ class Player():
             return False
         else:
             os.system('clear')
-            if self.__class__.__name__ == "Player":
+            if isinstance(self, Player):
                 print("You don't have enough stone!\n")
             return True
 
