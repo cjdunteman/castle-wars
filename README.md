@@ -1,0 +1,9 @@
+![](https://github.com/cjdunteman/castle-wars/.github/workflows/devops.yml/badge.svg)
+
+# Castle Wars
+
+Defeat your opponent by destroying their castle.
+
+# What I Learned
+
+I made this to get an idea of automated testing with GitHub Actions.
