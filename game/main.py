@@ -2,6 +2,7 @@ import os
 
 from player import Player, AI
 
+
 def game_loop():
     player = Player()
     ai = AI()
@@ -41,7 +42,7 @@ Warriors: {ai.warriors}
             else:
                 playerTurn = True
 
-        ai.make_move(player)   
+        ai.make_move(player)
 
         if ai.castle <= 0:
             playing = False
@@ -51,6 +52,7 @@ Warriors: {ai.warriors}
             print("You Lose!")
         else:
             os.system('clear')
+
 
 if __name__ == '__main__':
     game_loop()
